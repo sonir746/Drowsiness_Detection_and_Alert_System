@@ -22,7 +22,7 @@ We use latest deep learning model which provide the accuracy approximately than 
 Clone the project
 
 ```bash
-  git clone https://github.com/rahulsoni746/Drowsiness_Detection_and_Alert_System.git
+  git clone https://github.com/sonir746/Drowsiness_Detection_and_Alert_System.git
 ```
 
 Go to the project directory
@@ -65,7 +65,7 @@ import torch
 from ultralytics import YOLO
 
 # give the path of model 
-model = YOLO("sample_model\model.onnx")
+model = YOLO(f"model\model.pt")
 
 # if you want to predict on custom date (photos or videos) just replace zero "0" with path of data
 cap = cv2.VideoCapture(0)
@@ -102,7 +102,7 @@ cv2.destroyAllWindows()
 [![linkedin](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.linkedin.com&style=social&logo=Linkedin&logoColor=White&label=Linkedin&labelColor=blue&color=blue&cacheSeconds=3600
 )](https://www.linkedin.com/in/rahul-soni-004861227)
 [![GitHub](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2F&style=social&logo=GitHub&logoColor=Black&label=GitHub&labelColor=abcdef&color=fedcba&cacheSeconds=3600
-)](https://github.com/rahulsoni746)
+)](https://github.com/sonir746)
 
 
 
@@ -117,5 +117,5 @@ Report any issue here
 👇👇👇
 <br>
 [![GitHub](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com&style=social&logo=GitHub&label=issue&labelColor=grey&color=grey
-)](https://github.com/rahulsoni746/Drowsiness_Detection_and_Alert_System/issues)
+)](https://github.com/sonir746/Drowsiness_Detection_and_Alert_System/issues)
 
