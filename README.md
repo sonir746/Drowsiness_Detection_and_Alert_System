@@ -19,6 +19,8 @@ We use latest deep learning model which provide the accuracy approximately than 
 
 ## Run Locally
 
+### NOTE: Orignal Source folder upload [here](https://drive.google.com/drive/folders/1tMfPCD_p2vVAQL-wzFfSUY-NJERg_ypK?usp=sharing)
+
 Clone the project
 
 ```bash
@@ -36,7 +38,6 @@ Install dependencies
 ```bash
   pip install -r requirements.txt
 ```
-### NOTE: Orignal Source folder upload [here](https://drive.google.com/drive/folders/1tMfPCD_p2vVAQL-wzFfSUY-NJERg_ypK?usp=sharing)
 ## Training
 
 Use labelimg library to label the images to create a label data set and train our model to 
