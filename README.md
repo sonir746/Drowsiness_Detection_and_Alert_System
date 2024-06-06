@@ -5,6 +5,13 @@ This Deep Learning project detect the drowsiness and sleepiness and alert the hu
 
 We use latest deep learning model which provide the accuracy approximately than 75%-85%. We use YOLOv8 model which can detect multiple features of human face.
 
+## **DEMO VIDEO**
+### <strong>NOTE: <em>UnMute blow video if muted</em></strong>
+
+https://github.com/sonir746/Drowsiness_Detection_and_Alert_System/assets/169639197/17d75760-a0d8-4437-878f-4a88cf71dbd0
+
+<br>
+
 ## Packages Used
 
 | **Package** | **Version** |
