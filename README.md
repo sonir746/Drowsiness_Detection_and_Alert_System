@@ -1,9 +1,9 @@
 
 # Drowsiness-Detection-&-Alert-System-Using-Deep-Learning
 
-This Deep Learning project detect the drowsiness and sleepiness and alert the human being to meet an accident.
+This Deep Learning project detects driver drowsiness and sleepiness, helping prevent accidents by alerting the driver.
 
-We use latest deep learning model which provide the accuracy approximately than 75%-85%. We use YOLOv8 model which can detect multiple features of human face.
+We trained a custom YOLOv8 model on over 7,000 images to detect multiple facial features. The system triggers an alert when the driver’s eyes remain closed for more than one second and stops alerting once they are open again.
 
 ## **DEMO VIDEO**
 ### <strong>NOTE: <em>UnMute blow video if muted</em></strong>
@@ -26,7 +26,9 @@ https://github.com/sonir746/Drowsiness_Detection_and_Alert_System/assets/1696391
 
 ## Run Locally
 
-### NOTE: Orignal Source folder upload [here](https://drive.google.com/drive/folders/1tMfPCD_p2vVAQL-wzFfSUY-NJERg_ypK?usp=sharing)
+### NOTE: Orignal Source folder uploaded [here](https://drive.google.com/drive/folders/1tMfPCD_p2vVAQL-wzFfSUY-NJERg_ypK?usp=sharing)
+
+
 
 Clone the project
 
