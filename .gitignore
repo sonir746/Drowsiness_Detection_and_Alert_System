@@ -1,0 +1,44 @@
+# === Virtual environments ===
+.env/
+.env*/
+.venv/
+.venv*/
+env/
+env*/
+conda/
+.conda/
+
+# === Compiled Python files ===
+__pycache__/
+*.py[cod]
+*.so
+
+# === Model weights and training runs ===
+*.pt
+*.onnx
+runs/
+
+# === Jupyter Notebook checkpoints ===
+*.ipynb_checkpoints/
+
+# === System files ===
+.DS_Store
+Thumbs.db
+
+# === Editor settings ===
+.vscode/
+
+# === Logs and temp ===
+*.log
+*.tmp
+*.bak
+nohup.out
+
+# === Ignore ZIPs and video files ===
+*.zip
+*.mp4
+*.avi
+
+# === Environment files ===
+*.env
+*.conda

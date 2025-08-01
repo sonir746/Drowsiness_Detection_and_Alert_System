@@ -1,136 +1,85 @@
 
-# Drowsiness-Detection-&-Alert-System-Using-Deep-Learning
+# 💤 Drowsiness Detection & Alert System Using Deep Learning
 
-This Deep Learning project detects driver drowsiness and sleepiness, helping prevent accidents by alerting the driver.
+This deep learning project detects driver drowsiness in real time and helps prevent accidents by issuing audio alerts when the eyes remain closed for more than 2 seconds.
 
-We trained a custom YOLOv8 model on over 7,000 images to detect multiple facial features. The system triggers an alert when the driver’s eyes remain closed for more than one second and stops alerting once they are open again.
+We trained a custom **YOLOv8 model** on over **7,000 images** to detect facial features like open/closed eyes and face. The system runs on webcam or uploaded media and is compatible with both local and Colab environments.
 
-## **DEMO VIDEO**
-### <strong>NOTE: <em>UnMute blow video if muted</em></strong>
+## 🔗 Live Colab Demo
 
+> 📌 [Click here to open the project in Colab](https://colab.research.google.com/drive/1ROIP85y6HBKIRfyKd1_1W3ccDG3eC4Ps?usp=sharing)
+
+> ⚠️ Note: Google Colab only supports uploaded images.
+For real-time detection, run the code locally.
+
+
+
+
+## **📹 Demo Video**
+
+>🔊 Unmute the video if muted
 https://github.com/sonir746/Drowsiness_Detection_and_Alert_System/assets/169639197/17d75760-a0d8-4437-878f-4a88cf71dbd0
 
-<br>
 
-## Packages Used
+## 🧪 Built With
 
 | **Package** | **Version** |
 | ----------- | ----------- |
-| Python      | 3.8         |
+| Python      | 3.8+        |
 | OpenCV      | 4.8.1       |
 | Yolo        | 8.0.2       |
 | PyTorch     | 2.1.2       |
-| LabelImg    | 1.8.6       |
 | Pyttsx3     | 2.90        |
+| LabelImg    | 1.8.6       |
 
 
-## Run Locally
-
-### NOTE: Orignal Source folder uploaded [here](https://drive.google.com/drive/folders/1tMfPCD_p2vVAQL-wzFfSUY-NJERg_ypK?usp=sharing)
-
-https://github.com/user-attachments/assets/aa412ba4-39ac-4b33-837b-dc03c2ff63bc
-
-<br>
-
-Clone the project
+## 📁 Project Structure
 
 ```bash
-  git clone https://github.com/sonir746/Drowsiness_Detection_and_Alert_System.git
+📦 Drowsiness_Detection_and_Alert_System
+├── Source/
+│   ├── Models/           # Trained YOLOv8 model
+│   └── Images/           # Input/Output/Training images
+├── Drowsiness-Detection.ipynb  # Clean Notebook
+├── requirements.txt
+└── README.md
+
 ```
 
-Go to the project directory
+## 🎨 UI Snapshots
+
+### Labeling Example
+<img src="Source/Images/Labeling.png" width="700"/>
+
+### Training Data Samples
+<img src="Source/Images/TraningData.png" width="700"/>
+
+### Training Results
+<img src="Source/Images/results.png" width="700"/>
+
+### Prediction Example
+<img src="Source/Images/output.jpg" width="600"/>
+
+
+## 🚀 Run Locally
+
+### 📦 [Download Source Files (Google Drive)](https://drive.google.com/drive/folders/1tMfPCD_p2vVAQL-wzFfSUY-NJERg_ypK?usp=sharing)
+
 
 ```bash
-  cd <directory_path>
-```
+  # Clone repo
+git clone https://github.com/sonir746/Drowsiness_Detection_and_Alert_System.git
+cd Drowsiness_Detection_and_Alert_System
 
-Install dependencies
-
-```bash
-  pip install -r requirements.txt
-```
-## Training
-
-Use labelimg library to label the images to create a label data set and train our model to 
-
-<img src="Source\Images\Labeling.png" alt="loading..." style="width:800px;"/>
-
-### Traning Data
-<img src="Source\Images\TraningData.png" alt="loading..." style="width:800px;"/>
-
-## Traning Rusult
-
-<img src="Source\Images\results.png" alt="loading..." style="width:800px;"/>
-
-## Testing
-1.	After that we provide the camera access or input image to model.
-
-2.	Model will extract the feature from the model and perform conditional  operation on the given feature.
-
-3.	After that it will either alert or continue the execution till any interruption.
-
-## Source Code
-
-```Python
-
-import cv2
-import pyttsx3
-import time as t
-import torch
-from ultralytics import YOLO
-# give the path of model 
-model = YOLO('Source\Model\model.pt') 
-# if you want to predict on custom date (photos or videos) just replace zero "0" with path of data
-cap = cv2.VideoCapture(0) 
-count=0
-while True: 
-    success, frame = cap.read()
-    frame=cv2.flip(frame,1)
-    # remove classes for more outputs
-    results = model.predict(source=frame,show=True,save=True,classes=[0,1,2],device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')) 
-    names = model.names
-    check=[]
-    for r in results:
-        for c in r.boxes.cls:
-            check.append(names[int(c)])
-    if "face" in check:
-        if "close eyes" in check:
-            if count==0:
-                start_time = float(t.time())
-                count=1
-            end_time=float(t.time())
-            run_time=end_time-start_time      
-            # setting alert massage for 1 second you can change it
-            if run_time>1:                
-                print("alert")
-                alert = pyttsx3.init()
-                alert.say("Wake up")
-                alert.runAndWait()
-                alert= None
-                print(run_time)
-        elif "open eyes" in check:
-            alert= None
-            print("no alarm")
-            count=0
-    #press ESC for exit
-    if cv2.waitKey(2) & 0xFF == 27: 
-        break
-cap.release()
-cv2.destroyAllWindows()
+# Install dependencies
+pip install -r requirements.txt
 
 ```
 
-## Input Image
-<img src="Source\Images\input.jpg" alt="loading..." style="width:600px;"/>
 
-## Predicted Image
-<img src="Source\Images\output.jpg" alt="loading..." style="width:600px;"/>
+## 👤 Author
 
-
-
-## Auther
-
-👨🏻‍💼RAHUL SONI
+RAHUL SONI
 
 [![linkedin](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.linkedin.com&style=social&logo=Linkedin&logoColor=White&label=Linkedin&labelColor=blue&color=blue&cacheSeconds=3600
 )](https://www.linkedin.com/in/rahul-soni-004861227)
@@ -139,16 +88,12 @@ cv2.destroyAllWindows()
 
 
 
-## Feedback
+## 🛠️ Feedback or Issues
 
-If you have any feedback, please reach out to us at rahulsoni7469@gmail.com
+Have suggestions or found a bug?
 
-Or
+Please [open an issue here](https://github.com/sonir746/Drowsiness_Detection_and_Alert_System/issues) or contact:
 
-Report any issue here
-<br>
-👇👇👇
-<br>
-[![GitHub](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com&style=social&logo=GitHub&label=issue&labelColor=grey&color=grey
-)](https://github.com/sonir746/Drowsiness_Detection_and_Alert_System/issues)
+📧 rahulsoni7469@gmail.com
+
 
