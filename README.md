@@ -18,7 +18,8 @@ For real-time detection, run the code locally.
 ## **📹 Demo Video**
 
 >🔊 Unmute the video if muted
-https://github.com/sonir746/Drowsiness_Detection_and_Alert_System/assets/169639197/17d75760-a0d8-4437-878f-4a88cf71dbd0
+>
+> https://github.com/sonir746/Drowsiness_Detection_and_Alert_System/assets/169639197/17d75760-a0d8-4437-878f-4a88cf71dbd0
 
 
 ## 🧪 Built With
